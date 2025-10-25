@@ -1,70 +1,54 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Audio Player</title>
-    <link rel="icon" href="assets/ikonka.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="static/player_OOP_4.css">
+  <meta charset="UTF-8">
+  <title>Audio Player</title>
+  <link rel="icon" href="assets/ikonka.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/player_OOP_4.css">
 </head>
 <body>
-    <button id="create-player-btn" class="round-button">Create new player</button>
-
-    <div id="music-list" class="player-list-style">
-        <h2>Songs</h2>
-        <ul id="music-items"></ul>
-    </div>
-
-    <div id="player-box" class="player-box" style="display:none;">
-        <button id="back-btn" class="round-button">
-          <img src="assets/back.png" alt="Назад">
-        </button>
-        <img id="album-cover" src="" alt="Обложка" class="album-image">
-        <div class="track-info">
-          <h2 id="song-title">Song name</h2>
-          <h3 id="song-artist">Исполнитель</h3>
-        </div>
-        <audio id="audio-player" preload="metadata"></audio>
-        <div class="progress-wrap">
-          <input type="range" id="seek-bar" value="0" min="0" max="100">
-        </div>
-        <div class="time-wrap">
-          <span id="time-current">0:00</span>
-          <span id="time-total">0:00</span>
-        </div>
-        <div class="volume-wrap">
-          <span class="volume-icon">🔊</span>
-          <input type="range" id="sound-bar" min="0" max="100" value="80">
-        </div>
+  <section id="track-list-view" class="view active">
+    <h2>Мои треки</h2>
+    <ul id="track-list" class="track-list"></ul>
+  </section>
+  <section id="player-view" class="view">
+    <button id="back-btn">← Назад</button>
+      <div class="player">
+        <img id="cover" class="cover" src="" alt="Обложка"/>
+        <h2 id="track-title"></h2>
+        <p id="track-artist"></p>
         <div class="controls">
-          <button id="prev-btn" class="round-button"><img src="assets/prev.png"></button>
-          <button id="play-btn" class="round-button"><img id="play-symbol" src="assets/play.png"></button>
-          <button id="next-btn" class="round-button"><img src="assets/next.png"></button>
-          <a id="download-link" href="" download class="round-button"><img src="assets/download.png"></a>
+          <button id="prev-btn">⏮</button>
+          <button id="play-btn">▶</button>
+          <button id="next-btn">⏭</button>
+          <button id="random-btn">🎲</button>
         </div>
-        <button id="text-btn" class="text-button"><img src="assets/text.png"> Song text</button>
-      </div>
-      
-      <!-- Модальное окно -->
-      <div id="modal" class="modal">
-        <div class="modal-content">
-          <h3>Добавить песню</h3>
-          <label>Название</label>
-          <input type="text" id="song-title-input">
-          <label>Файл (mp3 URL)</label>
-          <input type="text" id="song-src-input">
-          <label>Обложка (jpg/png URL)</label>
-          <input type="text" id="song-cover-input">
-          <label>Текст (txt URL)</label>
-          <input type="text" id="song-lyrics-input">
-          <div class="actions">
-            <button id="add-song-btn" class="text-button">Добавить</button>
-            <button id="close-modal-btn" class="text-button">Закрыть</button>
-          </div>
+        <div class="progress">
+          <span id="current-time">0:00</span>
+          <input id="seek" type="range" min="0" max="100" value="0"/>
+          <span id="duration">0:00</span>
         </div>
+        <div class="volume">
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="1"/>
+        </div>
+        <audio id="audio"></audio>
       </div>
-      
-    <script src="scripts/player_OOP_4.js"></script>
+  </section>
+  <button id="create-player-btn">Create player</button>
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+          <h2>Добавить трек</h2>
+          <input type="file" id="track-file" accept="audio/*"/>
+          <input type="text" id="track-src" placeholder="URL аудио"/>
+          <input type="text" id="track-cover" placeholder="URL обложки"/>
+          <input type="text" id="track-title" placeholder="Название"/>
+          <input type="text" id="track-artist" placeholder="Исполнитель"/>
+          <button id="add-track-btn">Добавить</button>
+          <button id="close-modal">Закрыть</button>
+      </div>
+    </div>
+  <script src="scripts/player_OOP_4.js" defer></script>
 </body>
 </html>
 
