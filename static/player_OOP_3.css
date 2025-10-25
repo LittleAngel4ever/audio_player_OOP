@@ -1,0 +1,281 @@
+body {
+    font-family: 'Circular Std', 'Segoe UI', sans-serif;
+    background: #121212;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  :root {
+    --spotify-green: #1db954;
+    --spotify-green-hover: #1ed760;
+    --spotify-on-green: #ffffff;
+    --spotify-card-bg: #181818;
+    --spotify-card-hover: #282828;
+    --spotify-card-active: #333333;
+    --spotify-muted: #535353;
+    --spotify-text-muted: #b3b3b3;
+    --spotify-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Контейнер плеера */
+  .player-wrapper {
+    margin-bottom: 60px;
+  }
+  
+  /* Список треков */
+  .player-wrapper .music-list {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .player-wrapper .music-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .player-wrapper .music-items li {
+    background: var(--spotify-card-bg);
+    margin: 8px 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.2s ease;
+  }
+  
+  .player-wrapper .music-items li:hover {
+    background: var(--spotify-card-hover);
+  }
+  
+  .player-wrapper .music-items li.active-item {
+    background: var(--spotify-card-active);
+    border-left: 4px solid var(--spotify-green);
+  }
+  
+  .cover-thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  
+  .title-text {
+    flex: 1;
+    text-align: left;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  /* Блок плеера */
+  .player-wrapper .player-box {
+    max-width: 400px;
+    margin: 24px auto;
+    background-color: var(--spotify-card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--spotify-shadow);
+  }
+  
+  .album-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+  
+  .track-info h2 {
+    font-size: 20px;
+    margin: 6px 0;
+    color: #fff;
+  }
+  
+  .track-info h3 {
+    font-size: 14px;
+    margin: 4px 0;
+    color: var(--spotify-text-muted);
+  }
+  
+  /* Прогресс */
+  .progress-wrap {
+    margin: 15px 0 5px;
+  }
+  
+  .seek-bar {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--spotify-muted);
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .seek-bar::-webkit-slider-thumb,
+  .seek-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--spotify-green);
+    border: none;
+  }
+  
+  /* Время */
+  .time-wrap {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: var(--spotify-text-muted);
+  }
+  
+  /* Громкость */
+  .volume-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 20px;
+    gap: 10px;
+  }
+  
+  .volume-icon {
+    font-size: 16px;
+    color: var(--spotify-text-muted);
+  }
+  
+  .sound-bar {
+    width: 150px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--spotify-muted);
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .sound-bar::-webkit-slider-thumb,
+  .sound-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--spotify-green);
+    border: none;
+  }
+  
+  /* Кнопки управления */
+  .controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  
+  .round-button {
+    width: 56px;
+    height: 56px;
+    border: none;
+    border-radius: 50%;
+    background: var(--spotify-green);
+    color: var(--spotify-on-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  }
+  
+  .round-button img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+  
+  .round-button:hover {
+    background: var(--spotify-green-hover);
+  }
+  
+  .round-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Кнопка текста */
+  .text-button {
+    background: var(--spotify-green);
+    color: var(--spotify-on-green);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s ease, transform 0.1s ease;
+  }
+  
+  .text-button:hover {
+    background: var(--spotify-green-hover);
+  }
+  
+  .text-button:active {
+    transform: scale(0.97);
+  }
+  
+  .text-button img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+  }
+  
+  /* Текст песни */
+  .song-text {
+    background-color: var(--spotify-card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: left;
+    color: #fff;
+    white-space: pre-wrap;
+    font-family: monospace;
+    line-height: 1.4;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Панель текста */
+  .player-wrapper .lyrics-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background-color: #2a2a32;
+    color: #f3f4f6;
+    border-left: 2px solid #3f3f4a;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+    padding: 20px;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .player-wrapper .lyrics-panel.active {
+    right: 0;
+  }
+  
+  .player-wrapper .lyrics-panel h3 {
+    margin-top: 0;
+    color: var(--spotify-green);
+  }
+  
+  /* Кнопка "назад" */
+  .back-btn {
+    margin-bottom: 15px;
+  }
+  

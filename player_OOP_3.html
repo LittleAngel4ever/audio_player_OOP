@@ -5,10 +5,89 @@
   <title>Audio Player</title>
   <link rel="icon" href="assets/ikonka.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="player_OOP.css">
+  <link rel="stylesheet" href="static/player_OOP_3.css">
 </head>
 <body>
-  <div id="player-box"></div>
+  <div class="player-wrapper" id="player1">
+    <div class="music-list">
+      <h2>Songs</h2>
+      <ul class="music-items"></ul>
+    </div>
+    <div class="player-box" style="display:none;">
+      <button class="back-btn round-button">
+        <img src="assets/back.png" alt="Назад">
+      </button>
+      <img class="album-cover album-image" src="" alt="Обложка">
+      <div class="track-info">
+        <h2 class="song-title">Song name</h2>
+        <h3 class="song-artist">Исполнитель</h3>
+      </div>
+      <audio class="audio-player" preload="metadata"></audio>
+      <div class="progress-wrap">
+        <input type="range" class="seek-bar" value="0" min="0" max="100">
+      </div>
+      <div class="time-wrap">
+        <span class="time-current">0:00</span>
+        <span class="time-total">0:00</span>
+      </div>
+      <div class="volume-wrap">
+        <span class="volume-icon">🔊</span>
+        <input type="range" class="sound-bar" min="0" max="100" value="80">
+      </div>
+      <div class="controls">
+        <button class="prev-btn round-button"><img src="assets/prev.png"></button>
+        <button class="play-btn round-button"><img class="play-symbol" src="assets/play.png"></button>
+        <button class="next-btn round-button"><img src="assets/next.png"></button>
+        <a class="download-link round-button" href="" download><img src="assets/download.png"></a>
+      </div>
+      <button class="text-btn text-button"><img src="assets/text.png"> Song text</button>
+    </div>
+    <div class="lyrics-panel">
+      <h3>Song text</h3>
+      <div class="song-text"></div>
+    </div>
+  </div>
+
+  <div class="player-wrapper" id="player2">
+    <div class="music-list">
+      <h2>Songs</h2>
+      <ul class="music-items"></ul>
+    </div>
+    <div class="player-box" style="display:none;">
+      <button class="back-btn round-button">
+        <img src="assets/back.png" alt="Назад">
+      </button>
+      <img class="album-cover album-image" src="" alt="Обложка">
+      <div class="track-info">
+        <h2 class="song-title">Song name</h2>
+        <h3 class="song-artist">Исполнитель</h3>
+      </div>
+      <audio class="audio-player" preload="metadata"></audio>
+      <div class="progress-wrap">
+        <input type="range" class="seek-bar" value="0" min="0" max="100">
+      </div>
+      <div class="time-wrap">
+        <span class="time-current">0:00</span>
+        <span class="time-total">0:00</span>
+      </div>
+      <div class="volume-wrap">
+        <span class="volume-icon">🔊</span>
+        <input type="range" class="sound-bar" min="0" max="100" value="80">
+      </div>
+      <div class="controls">
+        <button class="prev-btn round-button"><img src="assets/prev.png"></button>
+        <button class="play-btn round-button"><img class="play-symbol" src="assets/play.png"></button>
+        <button class="next-btn round-button"><img src="assets/next.png"></button>
+        <a class="download-link round-button" href="" download><img src="assets/download.png"></a>
+      </div>
+      <button class="text-btn text-button"><img src="assets/text.png"> Song text</button>
+    </div>
+    <div class="lyrics-panel">
+      <h3>Song text</h3>
+      <div class="song-text"></div>
+    </div>
+  </div>
+
   <script src="scripts/player_OOP_3.js"></script>
 </body>
-</html>
+
